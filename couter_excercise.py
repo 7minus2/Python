@@ -6,14 +6,14 @@
 
 def counter_checker1():
     # Solution 1
-    my_list = sum([x for x in range(11)])
+    my_list = sum([x for x in range(1, 11, 1)])
     print(f'Solution 1 Sum is: {my_list}', end='\n')  # Answer = 55
 
 
 def counter_checker2():
     # Solution 2
     total_sum = 0
-    for num in range(11):
+    for num in range(1, 11):
         total_sum += num
     print(f'Solution 2 Sum is: {total_sum}', end='\n')  # Answer = 55
 
