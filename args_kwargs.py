@@ -24,4 +24,5 @@ def my_sum2(*args, **kwargs):
     return total + sum(**kwargs)
 
 
-print(my_sum2(1, 2, 3, 4, 5, num1=5, num2=10))
+if __name__ == "__main__":
+    print(my_sum2(1, 2, 3, 4, 5, num1=5, num2=10))
