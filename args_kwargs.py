@@ -1,5 +1,8 @@
 #!/usr/local/bin/python3
 
+# Rules: paramaters, *args, default paramaters, ***kwargs
+# example:  function(name, *args, num=2, **kwargs)
+
 
 def sum(num1, num2):
     '''
