@@ -23,8 +23,16 @@ def funct_duplicates2():
     print(diff)
 
 
+# duplicates 1 liner
+my_list = ['a', 'b', 'c', 'b', 'd', 'm', 'n', 'n']
+duplicates = list(set(
+    [letter for letter in my_list if my_list.count(letter) > 1]))
+
+
 if __name__ == "__main__":
     print('Running Solution 1')
     funct_duplicate()
     print('Running Solution 2')
     funct_duplicates2()
+    print('Running 1 liner solution')
+    print(duplicates)
