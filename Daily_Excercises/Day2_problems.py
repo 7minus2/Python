@@ -59,6 +59,27 @@ def func_problem6(*args, **kwargs):
     return results
 
 
+@func_timer
+def func_problem7():
+    '''
+    INFO: Write a program which takes 2 digits, X,Y as input and generates a 2-dimensional array. 
+    The element value in the i-th row and j-th column of the array should be i * j.
+    Note: Note: i=0,1.., X-1; j=0,1,¡­Y-1. Suppose the following inputs are given to the program: 3,5
+    '''
+    num1_input, num2_input = map(int, input(
+        'Please enter 2 numbers by comma: ').split(','))
+    result = []
+    for num1 in range(num1_input):
+        temp_num_holder = []
+        for num2 in range(num2_input):
+            temp_num_holder.append(num1*num2)
+            # print(f'Temp number Value: {temp_num_holder}')
+        result.append(temp_num_holder)
+        # print(f'Current result Value is: {result}')
+    # print(f'Final result Value is: {result}')
+    return result
+
+
 if __name__ == '__main__':
     print('Runnign Problem 1')
     func_result, timer1, timer2 = func_problem4()
@@ -72,5 +93,10 @@ if __name__ == '__main__':
 
     print('Runnign Problem 3')
     result, timer1, timer2 = func_problem6(100, 150, 180)
+    print(f'Solution is: {result}\n')
+    print(f'It took {timer2-timer1} secs\n')
+
+    print('Running Problem 4')
+    result, timer1, timer2 = func_problem7()
     print(f'Solution is: {result}\n')
     print(f'It took {timer2-timer1} secs\n')
