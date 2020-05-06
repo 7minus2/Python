@@ -10,6 +10,9 @@ Polymorphism, redefine methods
 
 
 class User():
+    def __init__(self, email):
+        self.email = email
+
     def sign_in(self):
         print('logged in')
 
@@ -18,7 +21,8 @@ class User():
 
 
 class Wizard(User):
-    def __init__(self, name, power):
+    def __init__(self, name, power, email):
+        super().__init__(email)
         self.name = name
         self.power = power
 
@@ -28,7 +32,8 @@ class Wizard(User):
 
 
 class Archer(User):
-    def __init__(self, name, num_of_arrows):
+    def __init__(self, name, num_of_arrows, email):
+        super().__init__(email)
         self.name = name
         self.num_of_arrows = num_of_arrows
 
@@ -37,8 +42,8 @@ class Archer(User):
 
 
 # isinstance(instance, Class)
-wizard1 = Wizard('Merlin', 50)
-archer1 = Archer('Robin', 30)
+wizard1 = Wizard('Merlin', 50, 'Merlin@gmail.com')
+archer1 = Archer('Robin', 30, 'archer@gmail.com')
 
 
 def player_attack(char):
