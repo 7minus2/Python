@@ -15,6 +15,7 @@ def my_timer_func(fn):
 def reviewTestFile(file, mode):
     my_file = open(file=file, mode=mode)
     print(my_file.read())
+    my_file.close()
 
 
 if __name__ == '__main__':
