@@ -5,6 +5,9 @@ from Excercises.couter_excercise import counter_checker1, counter_checker2
 
 
 class TestMain(unittest.TestCase):
+    def setUp(self):
+        print('Running Test')
+
     def test_highest_even(self):
         my_list = [10, 2, 3, 4, 8, 11]
         result = highest_even(my_list)
@@ -30,6 +33,14 @@ class TestMain(unittest.TestCase):
         result = counter_checker2(num)
         self.assertEqual(result, 66)
 
+    def test_counter2(self):
+        num = 12
+        result = counter_checker2(num)
+        self.assertEqual(result, 66)
+
+    def tearDown(self):
+        print('Cleaning Up')
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(verbosity=2)
