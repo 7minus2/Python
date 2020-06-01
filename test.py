@@ -2,9 +2,15 @@
 import unittest
 from Excercises.highest_even import highest_even
 from Excercises.couter_excercise import counter_checker1, counter_checker2
+from Excercises.random_guessing_game import rand_game
+import sys
+from mock import patch
 
 
 class TestMain(unittest.TestCase):
+
+    int_num = 12
+
     def setUp(self):
         print('Running Test')
 
@@ -29,14 +35,18 @@ class TestMain(unittest.TestCase):
         self.assertIsInstance(result, ValueError)
 
     def test_counter2(self):
-        num = 12
-        result = counter_checker2(num)
+        result = counter_checker2(self.int_num)
         self.assertEqual(result, 66)
 
     def test_counter2(self):
-        num = 12
-        result = counter_checker2(num)
+        result = counter_checker2(self.int_num)
         self.assertEqual(result, 66)
+
+    @patch('builtins.input', lambda * args: 1)
+    def test_guessing_game(self):
+        sys.argv = [None, 1, 12, 2]
+        result = rand_game(sys.argv[1], sys.argv[2], sys.argv[3])
+        self.assertEqual(result, 1)
 
     def tearDown(self):
         print('Cleaning Up')
